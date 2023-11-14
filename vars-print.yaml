@@ -1,4 +1,4 @@
-- name: print using ansible
+- name:  print using ansible
   hosts: localhost
   vars:
     URL: sample.com
