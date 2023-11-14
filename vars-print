@@ -3,6 +3,6 @@
   vars:
   URL: sample.com
   tasks:
-    - name: print a URL
+    - name: print task
     ansible.builtin.debug:
       msg: "{{ URL }}"
