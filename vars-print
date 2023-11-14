@@ -7,3 +7,4 @@
     ansible.builtin.debug:
     msg:
     - "{{ URL }}"
+    - Hello world {{url}}
