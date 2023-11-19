@@ -1,0 +1,14 @@
+- name: variables demo
+  hosts: all
+  tasks:
+    - name: show webserver variables
+      debug:
+        var: my_web
+
+    - name: show
+      debug:
+        var: my_media
+
+    - name: Show host variable
+      debug:
+        var:my_server:
