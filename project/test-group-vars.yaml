@@ -4,11 +4,17 @@
     - name: show webserver variables
       debug:
         var: my_web
+        tags:
+          web
 
     - name: show
       debug:
         var: my_media
+        tags:
+          media
 
     - name: Show host variable
       debug:
         var:my_server:
+          tags:
+            myserver
