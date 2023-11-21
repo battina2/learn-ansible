@@ -1,0 +1,20 @@
+- hosts: web
+- name: Install Apache web server
+    ansible.builtin.yum:
+      name: httpd
+      state: latest
+- name: start service
+    ansible.builtin.service:
+      name: httpd
+      enabled: yes
+      state: started
+- name: Download a file from a URL
+    get_url:
+      url: http://repo.example.com/website.tgz
+      dest: /tmp/website.tgz
+- name: unzip module
+    ansible.builtin.unarchive:
+      src: /tmp/website.tgz
+      dest: /var/www/html/
+
+
