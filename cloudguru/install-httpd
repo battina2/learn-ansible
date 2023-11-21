@@ -1,8 +1,8 @@
 - hosts: web
 - name: Install Apache web server
-    yum:
-      name: httpd
-      state: present
+  yum:
+    name: httpd
+    state: present
 - name: start service
     ansible.builtin.service:
       name: httpd
