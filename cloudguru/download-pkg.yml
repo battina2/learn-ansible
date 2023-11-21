@@ -1,5 +1,5 @@
   - name: Download a file from a URL
-  - hosts: web
+    hosts: web
     get_url:
-      url: https://vama.app/blog/wp-content/uploads/2022/08/who-was-lord-krishnas-true-love-2048x1152.jpg
-      dest: /tmp/krishna.jpg
+        url: https://vama.app/blog/wp-content/uploads/2022/08/who-was-lord-krishnas-true-love-2048x1152.jpg
+        dest: /tmp/krishna.jpg
