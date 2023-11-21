@@ -1,5 +1,6 @@
 - name: install and configure httpd
   hosts: web
+  become: true
   tasks:
   - name: Install Apache web server
     yum:
