@@ -2,8 +2,12 @@
   hosts: localhost
   tasks:
     - name: Download a file
+      block:
       ansible.builtin.get_url:
         url: "http://apps.l33t.com/transaction_list "
         dest: "/home/ansible/transaction_list"
     - ansible.builtin.debug:
         msg: "downloaded"
+      rescue:
+        - ansible.builtin.debug:
+            mag: "site is not available yaar try after some time"
