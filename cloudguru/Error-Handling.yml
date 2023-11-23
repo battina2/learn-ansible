@@ -3,5 +3,7 @@
   tasks:
     - name: Download a file
       ansible.builtin.get_url:
-        url: "https://example.com/somefile.txt"
-        dest: "/path/on/local/machine/somefile.txt"
+        url: "http://apps.l33t.com/transaction_list "
+        dest: "/home/ansible/transaction_list"
+    - ansible.builtin.debug:
+        msg: "downloaded"
