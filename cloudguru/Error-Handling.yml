@@ -1,5 +1,5 @@
-
 - name: this is a ply
+  hosts: localhost
   tasks:
     block:
     - name: "Download a file"
