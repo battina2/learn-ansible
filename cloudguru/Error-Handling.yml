@@ -8,6 +8,6 @@
     #- name: " print result"
        ansible.builtin.debug:
          msg: "downloaded"
-     rescue:
-       ansible.builtin.debug:
-       msg: " tray again please "
+       rescue:
+         ansible.builtin.debug:
+         msg: " tray again please "
