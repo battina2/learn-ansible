@@ -1,0 +1,11 @@
+- hosts: local host
+  name: download transaction list from url and handle errors
+  tasks:
+    name: actual download
+    ansible.builtin.get_url:
+      url: "http://apps.l33t.com/transaction_list"
+      dest: "/home/ansible/transaction_list/"
+    ansible.builtin.debug:
+    msg: "file downloaded"
+
+
