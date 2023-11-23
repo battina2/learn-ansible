@@ -7,6 +7,6 @@
          dest: "/home/ansible/transaction_list"
        - debug:
          msg: "downloaded"
-     rescue:
-       - debug:
-         msg: " tray again please "
+       - rescue:
+         - debug:
+           msg: " tray again please "
