@@ -2,11 +2,12 @@
   hosts: localhost
   tasks:
      block:
-       - get_url:
-         url: "http://apps.l33t.com/transaction_list "
-         dest: "/home/ansible/transaction_list"
-       - debug:
-         msg: "downloaded"
-       - rescue:
-         - debug:
-           msg: " tray again please "
+       - name:
+           - get_url:
+             url: "http://apps.l33t.com/transaction_list "
+             dest: "/home/ansible/transaction_list"
+           - debug:
+             msg: "downloaded"
+           - rescue:
+           - debug:
+             msg: " tray again please "
