@@ -1,12 +1,10 @@
 - hosts: localhost
   tasks:
-    - name:  this is error handling
+    - name: download transaction_list
       block:
-        ansible.builtin.get_url:
-          url: "http://apps.l33t.com/transaction_list "
-          dest: "/home/ansible/transaction_list"
-          ansible.builtin.debug:
-            msg : "downloaded"
-          rescue:
-            ansible.builtin.debug:
-            msg: " tray again please "
+        - ansible.builtin.get_url:
+            url: http://apps.l33t.com/transaction_list
+            dest: /home/ansible/transaction_list
+        - ansible.builtin.debug: msg="File downloaded"
+      rescue:
+        - ansible.builtin.debug: msg="l33t.com appears to be down.  Try again later."
