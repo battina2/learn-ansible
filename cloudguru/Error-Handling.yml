@@ -1,7 +1,7 @@
 - name: Download a file from a URL
   hosts: localhost
   tasks:
-    - name: Download a file
+    - name: "Download a file"
       block:
         ansible.builtin.get_url:
           url: "http://apps.l33t.com/transaction_list "
