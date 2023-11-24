@@ -36,5 +36,10 @@
       user:
         name: xyz_corp_mnetwork
         state: present
-
-
+- hosts: sysadmin
+  become: yes
+  tasks:
+    - name: copy tarball
+      copy:
+        src: /home/ansible/scripts.tgz
+        dest: /mnt/storage/
