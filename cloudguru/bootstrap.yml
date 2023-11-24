@@ -30,7 +30,7 @@
   tasks:
     - name: install netcat
       yum:
-        name: nmap-netcat
+        name: nmap-ncat
         state: latest
     - name: create network user
       user:
