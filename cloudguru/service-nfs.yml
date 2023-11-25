@@ -6,30 +6,32 @@
   - name: install nfs
   yum:
   name: nfs-utils
-  state: latest
-  - name: start and enable nfs-server
-    service:
+  state: present
+- name: start and enable nfs-server
+  service:
     name: nfs-server
     state: started
     enabled: yes
-  - name: configure exports
-    template:
+- name: configure exports
+  template:
     src: /home/ansible/exports.j2
     dest: /etc/exports
     notify: update nfs
     handlers:
-  - name: update nfs exports
-    command: exportfs -a
-    listen: update nfs
+- name: update nfs exports
+  command: exportfs -a
+  listen: update nfs
 
 - hosts: remote
   become: yes
-  Vars: nfs_ip: "{{ hostvars['nfs']['ansible_default_ipv4']['address'] }}"
+  Vars:
+  nfs_ip: "{{ hostvars['nfs']['ansible_default_ipv4']['address'] }}"
   nfs_hostname: "{{ hostvars['nfs']['ansible_hostname'] }}"
-  vars_files: - /home/ansible/user-list.txt
+  vars_files: /home/ansible/user-list.txt
   tasks:
   - name: configure hostsfile
-    template: src: /home/ansible/etc.hosts.j2
+    template:
+    src: /home/ansible/etc.hosts.j2
     dest: /etc/hosts.nfslab
   - name: get file status
     stat:
@@ -38,9 +40,9 @@
   - name: debug info
     debug:
     var: filestat
-  - name: create users
+  - name: create user
     user:
-    name: "{{ item }}"
-    when: filestat.stat.exists
-    loop: "{{ users }}"
+     name: "{{ item}}"
+     when: filestat.stat.exists
+     loop: "{{ users }}"
 
