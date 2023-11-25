@@ -30,7 +30,7 @@
   vars_files:
     - /home/ansible/user-list.txt
   tasks:
-    - name: configure hostsfile
+    - name: configure hosts file
       template:
         src: /home/ansible/etc.hosts.j2
         dest: /etc/hosts.nfslab
