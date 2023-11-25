@@ -21,12 +21,14 @@
     - name: update nfs exports
       command: exportfs -a
       listen: update nfs
+
 - hosts: remote
   become: yes
   Vars:
     nfs_ip: "{{ hostvars['nfs']['ansible_default_ipv4']['address'] }}"
     nfs_hostname: "{{ hostvars['nfs']['ansible_hostname'] }}"
-    vars_files: /home/ansible/user-list.txt
+  vars_files:
+    - /home/ansible/user-list.txt
   tasks:
     - name: configure hostsfile
       template:
