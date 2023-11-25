@@ -1,7 +1,6 @@
 - hosts: nfs
   become: yes
-  vars:
-    share_path: /mnt/nfsroot
+  share_path: /mnt/nfsroot
   tasks:
     - name: install nfs
       yum :
@@ -24,7 +23,7 @@
 
 - hosts: remote
   become: yes
-  Vars:
+  vars:
     nfs_ip: "{{ hostvars['nfs']['ansible_default_ipv4']['address'] }}"
     nfs_hostname: "{{ hostvars['nfs']['ansible_hostname'] }}"
   vars_files:
