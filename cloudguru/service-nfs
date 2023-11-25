@@ -4,30 +4,23 @@
    share_path: /mnt/nfsroot
    tasks:
    - name: install nfs
-   yum: name: nfs-utils
-   state: latest
-
- - hosts: nfs
-   become: yes
-   vars:
-   share_path: /mnt/nfsroot
-   tasks:
-   - name: install nfs
    yum:
    name: nfs-utils
    state: latest
    - name: start and enable nfs-server
-   service: name: nfs-server
-   state: started
-   enabled: yes
+   service:
+   - name: nfs-server
+     state: started
+     enabled: yes
    - name: configure exports
-   template: src: /home/ansible/exports.j2
-   dest: /etc/exports
-   notify: update nfs
-   handlers:
+     template:
+     src: /home/ansible/exports.j2
+     dest: /etc/exports
+     notify: update nfs
+     handlers:
    - name: update nfs exports
-   command: exportfs -a
-   listen: update nfs
+     command: exportfs -a
+     listen: update nfs
 
    - hosts: remote
      become: yes
@@ -36,15 +29,18 @@
      vars_files: - /home/ansible/user-list.txt
      tasks:
      - name: configure hostsfile
-     template: src: /home/ansible/etc.hosts.j2
-     dest: /etc/hosts.nfslab
+       template: src: /home/ansible/etc.hosts.j2
+       dest: /etc/hosts.nfslab
      - name: get file status
-     stat: path: /opt/user-agreement.txt
-     register: filestat
+       stat:
+       path: /opt/user-agreement.txt
+       register: filestat
      - name: debug info
-     debug: var: filestat
+       debug:
+       var: filestat
      - name: create users
-     user: name: "{{ item }}"
-     when: filestat.stat.exists
-     loop: "{{ users }}"
+       user:
+       name: "{{ item }}"
+       when: filestat.stat.exists
+       loop: "{{ users }}"
 
