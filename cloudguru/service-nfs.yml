@@ -31,18 +31,18 @@
   tasks:
   - name: configure hostsfile
     template:
-    src: /home/ansible/etc.hosts.j2
-    dest: /etc/hosts.nfslab
+      src: /home/ansible/etc.hosts.j2
+      dest: /etc/hosts.nfslab
   - name: get file status
     stat:
-    path: /opt/user-agreement.txt
-    register: filestat
+      path: /opt/user-agreement.txt
+      register: filestat
   - name: debug info
     debug:
-    var: filestat
+      var: filestat
   - name: create user
     user:
-     name: "{{ item}}"
-     when: filestat.stat.exists
-     loop: "{{ users }}"
+      name: "{{ item}}"
+      when: filestat.stat.exists
+      loop: "{{ users }}"
 
