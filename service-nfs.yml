@@ -20,7 +20,7 @@
     - name: update nfs exports
       command: exportfs -a
       listen: update nfs
-# this is comment
+
 - hosts: remote
   become: yes
   vars:
