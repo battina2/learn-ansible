@@ -10,21 +10,20 @@
       notify: httpd service
       tags:
         - base-install
-
     - name: configure virtual host
       template:
         src: /home/ansible/vhost.conf.j2
         dest: /etc/httpd/conf.d/vhost.conf
-        notify: httpd service
-        tags:
-          - vhost
+      notify: httpd service
+      tags:
+        - vhost
     - name: configure site auth
       template:
         src: /home/ansible/htpasswd.j2
         dest: /etc/httpd/conf/htpasswd
-        notify: httpd service
-        tags:
-          - vhost
+      notify: httpd service
+      tags:
+        - vhost
     - name: run data job
       command: /opt/data-job.sh
       async: 600
