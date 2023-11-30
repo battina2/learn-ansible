@@ -2,7 +2,7 @@
 - hosts: qa-servers
   name: become ansible user and download
   vars:
-    x = CHECKSUM=$(curl http://software.xyzcorp.com/enigma-checksum.txt | cut -f1 -d' ')
+    x: CHECKSUM=$(curl http://software.xyzcorp.com/enigma-checksum.txt | cut -f1 -d' ')
   tasks:
     - name: download from website
       get_url:
