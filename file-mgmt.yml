@@ -8,7 +8,7 @@
       get_url:
         url: http://software.xyzcorp.com/enigma.tgz
         dest: /tmp/enigma.tgz
-        checksum: sha256:$CHECKSUM
+        checksum: "sha256:$CHECKSUM"
     - name: print value
       debug:
         msg: sha256$x
