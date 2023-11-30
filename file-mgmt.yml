@@ -1,9 +1,9 @@
 ---
-- hosts: localhost
+  hosts: localhost
   name: become ansible user and download
   vars:
     srini: $(curl http://software.xyzcorp.com/enigma-checksum.txt | cut -f1 -d' ')
-    tasks:
+  tasks:
     name: print value
     debug:
     msg : "the value is {{$srini}}"
