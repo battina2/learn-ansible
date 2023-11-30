@@ -4,11 +4,11 @@
   vars:
     CHECKSUM: $(curl http://software.xyzcorp.com/enigma-checksum.txt | cut -f1 -d' ')
   tasks:
-    - name: download from website
-      get_url:
-        url: http://software.xyzcorp.com/enigma.tgz
-        dest: /tmp/enigma.tgz
-        checksum: sha256:$CHECKSUM
+#    - name: download from website
+#      get_url:
+#        url: http://software.xyzcorp.com/enigma.tgz
+#        dest: /tmp/enigma.tgz
+#        checksum: sha256:$CHECKSUM
     - name: print value
       debug:
         msg: sha256:$x
