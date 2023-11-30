@@ -11,7 +11,7 @@
 #        checksum: sha256:$CHECKSUM
     - name: print value
       debug:
-        msg: 'sha256:'+{$x}
+        msg: 'sha256:{$x}'
 
 
 
