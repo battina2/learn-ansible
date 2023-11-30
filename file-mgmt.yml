@@ -3,7 +3,7 @@
   name: become ansible user and download
   tasks:
     - name: run a command
-      command:
+      shell:
         cmd: srini = $(curl http://software.xyzcorp.com/enigma-checksum.txt | cut -f1 -d' ')
 
 #  tasks:
