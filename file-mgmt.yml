@@ -3,9 +3,9 @@
   name: become ansible user and download
   vars:
     CHECKSUM: $(curl http://software.xyzcorp.com/enigma-checksum.txt | cut -f1 -d' ')
-  tasks:
-    debug:
-    msg : the value is {{$CHECKSUM}}
+    tasks:
+      debug:
+      msg : the value is {{$CHECKSUM}}
 #  tasks:
 #    - name: download from website
 #      get_url:
