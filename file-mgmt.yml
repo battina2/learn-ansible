@@ -8,7 +8,7 @@
       get_url:
         url: http://software.xyzcorp.com/enigma.tgz
         dest: /tmp/enigma.tgz
-        checksum: sha256:{{X}}
+        checksum: sha256:95892bd693b8cc7f0d9beb56d3a79bc46021b52e050a0ef1d1253d0592894b00
 
 
 
