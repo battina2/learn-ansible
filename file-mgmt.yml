@@ -1,13 +1,15 @@
 ---
 - hosts: localhost
   name: become ansible user and download
+  vars:
+    x
   tasks:
     - name: run a command
       shell:
-        cmd: CHECKSUM=$(curl http://software.xyzcorp.com/enigma-checksum.txt | cut -f1 -d' ')
+        cmd: x=$(curl http://software.xyzcorp.com/enigma-checksum.txt | cut -f1 -d' ')
     - name: print value
       debug:
-        msg: {$CHECKSUM}
+        msg: $x
 
 #  tasks:
 #    - name: download from website
