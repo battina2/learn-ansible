@@ -4,7 +4,7 @@
   vars:
     CHECKSUM: $(curl http://software.xyzcorp.com/enigma-checksum.txt | cut -f1 -d' ')
   tasks:
-  debug:
+    debug:
     msg : the value is {{$CHECKSUM}}
 #  tasks:
 #    - name: download from website
