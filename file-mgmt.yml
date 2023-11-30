@@ -4,7 +4,7 @@
   tasks:
     - name: run a command
       shell:
-        cmd: srini = $(curl http://software.xyzcorp.com/enigma-checksum.txt | cut -f1 -d' ')
+        cmd: CHECKSUM=$(curl http://software.xyzcorp.com/enigma-checksum.txt | cut -f1 -d' ')
 
 #  tasks:
 #    - name: download from website
