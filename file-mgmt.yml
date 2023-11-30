@@ -8,7 +8,8 @@
       shell:
         cmd: x=$(curl http://software.xyzcorp.com/enigma-checksum.txt | cut -f1 -d' ')
     - name: print value
-      var: x
+      debug:
+        var: x
 
 #  tasks:
 #    - name: download from website
