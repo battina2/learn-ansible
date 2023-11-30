@@ -5,8 +5,9 @@
     - name: run a command
       shell:
         cmd: x=$(curl http://software.xyzcorp.com/enigma-checksum.txt | cut -f1 -d' ')
-          $x
-
+    - name: print value
+      debug:
+        msg: $x
 
 #  tasks:
 #    - name: download from website
