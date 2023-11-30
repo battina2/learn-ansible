@@ -20,5 +20,11 @@
         dest: "/opt/"
         remote_src: yes
 
+    - name : Add a line to a file
+      lineinfile:
+        path: "/opt/enigma/details.txt"
+        line : "Your new line to add"
+        insertafter : EOF
+
 
 
