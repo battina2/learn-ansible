@@ -5,13 +5,13 @@
     CHECKSUM: $(curl http://software.xyzcorp.com/enigma-checksum.txt | cut -f1 -d' ')
     debug :
       msg : $CHECKSUM
-  tasks:
+#  tasks:
 #    - name: download from website
 #      get_url:
 #        url: http://software.xyzcorp.com/enigma.tgz
 #        dest: /tmp/enigma.tgz
 #        checksum: sha256:$CHECKSUM
-    - name: print value
+
 
 
 
