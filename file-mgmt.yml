@@ -4,6 +4,7 @@
   vars:
     srini: $(curl http://software.xyzcorp.com/enigma-checksum.txt | cut -f1 -d' ')
     tasks:
+    name: print value
     debug:
     msg : "the value is {{$srini}}"
 #  tasks:
