@@ -2,21 +2,13 @@
 - hosts: localhost
   name: become ansible user and download
   vars:
-    x: "hello"
+    x: 95892bd693b8cc7f0d9beb56d3a79bc46021b52e050a0ef1d1253d0592894b00
   tasks:
-    - name: run a command
-      shell:
-        cmd: x=$(curl http://software.xyzcorp.com/enigma-checksum.txt | cut -f1 -d' ')
-    - name: print value
-      debug:
-        var: x
-
-#  tasks:
-#    - name: download from website
-#      get_url:
-#        url: http://software.xyzcorp.com/enigma.tgz
-#        dest: /tmp/enigma.tgz
-#        checksum: sha256:$CHECKSUM
+    - name: download from website
+      get_url:
+        url: http://software.xyzcorp.com/enigma.tgz
+        dest: /tmp/enigma.tgz
+        checksum: sha256:{{X}}
 
 
 
