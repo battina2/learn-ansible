@@ -10,14 +10,14 @@
 
     - name: Ensure the target directory exists
       file:
-      path: "/opt/"
-      state: directory
+        path: "/opt/"
+        state: directory
 
     - name: Expand the tar file
       unarchive:
-      src: "/tmp/enigma.tgz"
-      dest: "/opt/"
-      remote_src: yes
+        src: "/tmp/enigma.tgz"
+        dest: "/opt/"
+        remote_src: yes
 
 
 
