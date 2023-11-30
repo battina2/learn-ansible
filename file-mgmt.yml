@@ -26,5 +26,11 @@
         line : "Your new line to add"
         insertafter : EOF
 
+    - name: Set group ownership of the folder
+      file:
+        path: "/opt/enigma/secret"
+        state: directory
+        group: protected
+
 
 
