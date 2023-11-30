@@ -1,8 +1,6 @@
 ---
 - hosts: localhost
   name: become ansible user and download
-
-    srini: $(curl http://software.xyzcorp.com/enigma-checksum.txt | cut -f1 -d' ')
   tasks:
     - name: run a command
       command:
