@@ -1,15 +1,13 @@
 ---
 - hosts: qa-servers
   name: become ansible user and download
-  vars:
-    x: 95892bd693b8cc7f0d9beb56d3a79bc46021b52e050a0ef1d1253d0592894b00
   tasks:
     - name: download from website
       get_url:
         url: http://software.xyzcorp.com/enigma.tgz
         dest: /tmp/enigma.tgz
         checksum: sha256:95892bd693b8cc7f0d9beb56d3a79bc46021b52e050a0ef1d1253d0592894b00
-    #- name: Ensure the target directory exists
+     #name: Ensure the target directory exists
       file:
       path: "/opt/"
       state: directory
