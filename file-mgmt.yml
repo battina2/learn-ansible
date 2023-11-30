@@ -7,7 +7,7 @@
         cmd: x=$(curl http://software.xyzcorp.com/enigma-checksum.txt | cut -f1 -d' ')
     - name: print value
       debug:
-        msg: $x
+        msg: "{{$x}}"
 
 #  tasks:
 #    - name: download from website
