@@ -5,9 +5,7 @@
     - name: run a command
       command:
         cmd: srini = $(curl http://software.xyzcorp.com/enigma-checksum.txt | cut -f1 -d' ')
-    - name: print value
-      debug:
-      msg : "the value is {{$srini}}"
+
 #  tasks:
 #    - name: download from website
 #      get_url:
