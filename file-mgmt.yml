@@ -31,6 +31,11 @@
         path: "/opt/enigma/secret"
         state: directory
         group: protected
+    - name:
+      file:
+        path : "/opt/enigma/tmp/deployment-passwords.txt"
+        state : absent
+
 
 
 
