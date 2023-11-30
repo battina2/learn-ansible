@@ -2,7 +2,7 @@
 - hosts: localhost
   name: become ansible user and download
   vars:
-    x
+    x:
   tasks:
     - name: run a command
       shell:
