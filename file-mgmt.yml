@@ -1,8 +1,8 @@
 ---
-  hosts: localhost
+- hosts: localhost
   name: become ansible user and download
   vars:
-    srini: $(curl http://software.xyzcorp.com/enigma-checksum.txt | cut -f1 -d' ')
+    srini = $(curl http://software.xyzcorp.com/enigma-checksum.txt | cut -f1 -d' ')
   tasks:
     name: print value
     debug:
