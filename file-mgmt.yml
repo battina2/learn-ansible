@@ -8,5 +8,5 @@
       get_url:
         url: http://software.xyzcorp.com/enigma.tgz
         dest: /tmp/enigma.tgz
-        checksum: sha256:$x
+        checksum: $x
 
